@@ -2,7 +2,7 @@
 
 #define USER_REG 0x90080000
 
-void main() {
+int main() {
     unsigned int val1 = 6;						// = 0b110
     *(unsigned int*) USER_REG = val1;		    // turn-on LED2 and LED3
 
@@ -11,4 +11,6 @@ void main() {
 
     unsigned int mask = 3;						// = 0b011
     *(unsigned int*) USER_REG = mask & val1;	// turn-off LED3
+
+    return 0;
 }
